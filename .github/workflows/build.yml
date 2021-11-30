@@ -121,6 +121,11 @@ jobs:
       - name: Set Auth
         run: echo "MATCH_GIT_BASIC_AUTHORIZATION=$(echo -n ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }} | base64)" >> $GITHUB_ENV
 
+      - name: Auth Test
+        run: |
+          echo ${{ github.actor }}
+          echo $MATCH_GIT_BASIC_AUTHORIZATION
+
       - name: Build iOS Client
         run: npm run action apple/scripts/ios_package_remote
 
