@@ -111,7 +111,7 @@ jobs:
         run: sudo xcode-select -switch /Applications/Xcode_12.5.app
       
       - name: Set Auth
-        run: echo "MATCH_GIT_BASIC_AUTHORIZATION=$(echo -n daniellacosse:${{ secrets.GITHUB_TOKEN }} | base64" >> $GITHUB_ENV
+        run: echo "MATCH_GIT_BASIC_AUTHORIZATION=$(echo -n ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }} | base64)" >> $GITHUB_ENV
 
       - name: Build iOS Client
         run: npm run action apple/scripts/ios_package_remote
