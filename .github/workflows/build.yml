@@ -109,7 +109,7 @@ jobs:
         run: sudo xcode-select -switch /Applications/Xcode_12.5.app
 
       - name: Build iOS Client
-        run: npm run action apple/scripts/ios_package_remote
+        run: npm run action apple/scripts/ios_package_local
 
   android:
     name: Android
